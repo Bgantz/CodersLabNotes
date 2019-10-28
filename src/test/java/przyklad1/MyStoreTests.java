@@ -1,6 +1,5 @@
-package przyklad1;/*
-
-
+package przyklad1;
+/*
 
 Zadanie Dodatkowe 2
 Ważną funkcjonalnością sklepu jest możliwość zarejestrowania nowego użytkownika. W tym celu proszę przygotuj skrypt,
@@ -52,7 +51,6 @@ Zwróć uwagę, że wielokrotne zakupy mogą spowodować brak towaru w naszym sk
 na taką sytuację.
 */
 
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -81,7 +79,7 @@ public class MyStoreTests {
         driver.get("http://prod-kurs.coderslab.pl");
     }
     @Test
-    public void testSearchShopTest() {
+    public void testSearchShopTest() { // Zadanie Dodatkowe 1
 
         String[] products = {"mug", "t-shirt", "notebook"};
         Random random = new Random();
@@ -105,7 +103,7 @@ public class MyStoreTests {
     }
 
     @Test
-    public void registrationForm() throws InterruptedException {
+    public void registrationForm() throws InterruptedException { //Zadanie dodatkowe 2
         String[] firstNames = {"John", "Scott", "Franklin"};
         String[] lastNames = {"Smith", "Obama", "Trump"};
         String[] passwords = {"qwerty","zaqwsxcde","12345qwerty!@#$%"};
@@ -146,9 +144,11 @@ public class MyStoreTests {
 
      //   Assert.assertTrue(driver.findElements(By.className("account")).contains("View my customer account"));
 
+        Thread.sleep(2000);
         driver.findElement(By.className("account")).click();
         driver.findElement(By.id("address-link"));
 
+        Thread.sleep(2000);
         fillForm("alias", aliases[randomAliase]);
         fillForm("company", companies[randomCompany]);
         fillForm("vat_number", String.valueOf(vatNumber));
@@ -167,7 +167,7 @@ public class MyStoreTests {
     }
 
     @Test
-    public void filterTesting(){
+    public void filterTesting(){ // Zadanie Dodatkowe 3
 
     }
 
@@ -181,7 +181,7 @@ public class MyStoreTests {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown(){
         // Zamknij przeglądarkę
         driver.quit();
     }
