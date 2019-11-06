@@ -1,15 +1,16 @@
 # CodersLabNotes
 Mine notes and practice code from WAR_TAO_O_05, hope it will be usefull.
 
-# structure
+# File Structure
 
+```
 .
 ├── KursSelenium.iml
 ├── pom.xml
 └── src
     ├── Cucamber
     │   ├── Feature
-    │   │   └── google-text-search.feature
+    │   │   └── google-text-search.feature - Example for cucumber tests
     │   └── FeatureCodersGuru
     │       └── coders-guru.feature - FinalTask Gherkin Steps description
     ├── main
@@ -29,5 +30,5 @@ Mine notes and practice code from WAR_TAO_O_05, hope it will be usefull.
                 ├── SearchBing.java - Some course notes
                 ├── SearchTest.java - Some course notes
                 └── Zadanie10.java - Some course notes
-
+```
 
