@@ -28,11 +28,11 @@ public class CodersGuruSteps {
         driver.get("https://tester.codersguru.pl/");
     }
 
-    @Given("^user email inserted in to site$")
-    public void userEmailInToSite() {
+    @Given("^user email is (.*)$")
+    public void userEmailInToSite(String email) {
 
         WebElement emailInput = driver.findElement(By.name("email"));
-        emailInput.sendKeys("bob@mailinator.com");
+        emailInput.sendKeys(email);
         emailInput.submit();
     }
 
@@ -40,37 +40,37 @@ public class CodersGuruSteps {
         driver.findElement(By.id(inputID)).sendKeys(value);
     }
 
-    @Given("^user name (.*)$")
+    @Given("^user name is (.*)$")
     public void userName(String username) {
         fillForm(username, "fos_user_registration_form_name");
     }
 
-    @Given("^user second name (.*)$")
+    @Given("^user second name is (.*)$")
     public void userSecondName(String secondName) {
         fillForm(secondName, "fos_user_registration_form_lastname");
     }
 
-    @Given("^user password (.*)$")
+    @Given("^user password is (.*)$")
     public void userPassword(String password) {
         fillForm(password, "fos_user_registration_form_plainPassword_first");
     }
 
-    @Given("^user repeats password (.*)$")
+    @Given("^user repeats password is (.*)$")
     public void userRepeatsPassword(String password) {
         fillForm(password, "fos_user_registration_form_plainPassword_second");
     }
 
-    @Given("^user city (.*)$")
+    @Given("^user city is (.*)$")
     public void userCity(String city) {
         fillForm(city, "form_city");
     }
 
-    @Given("^user postcode (.*)$")
+    @Given("^user postcode is (.*)$")
     public void userPostcode(String postcode) {
         fillForm(postcode, "form_postal_code");
     }
 
-    @Given("^user street (.*)$")
+    @Given("^user street is (.*)$")
     public void userStreet(String street) {
         fillForm(street, "form_street");
     }
@@ -87,8 +87,8 @@ public class CodersGuruSteps {
         driver.findElement(By.xpath("/html/body/div/div/div/form/div[12]/input")).click();
     }
 
-    @Then("^form is properly send$")
-    public void formIsProperlySend() {
+    @Then("^form is properly sent$")
+    public void formIsProperlySent() {
         driver.findElement(By.id("register-submit-btn")).submit();
 
         Assert.assertNotNull(driver.findElement(By.id("user-name")));
